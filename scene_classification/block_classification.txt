@@ -1,0 +1,19 @@
+Image Classification Results for block.jpg
+
+Classified Type: Lego Blocks
+
+Color Analysis:
+----------------
+Blue Ratio: 0.065
+Orange Ratio: 0.001
+Red Ratio: 0.061
+Green Ratio: 0.066
+Gray Ratio: 0.013
+Color Variety: 0.011
+
+Texture Analysis:
+----------------
+Contrast: 0.1112
+Correlation: 0.1805
+Energy: 0.1203
+Homogeneity: 0.1970

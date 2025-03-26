@@ -1,0 +1,17 @@
+Image Processing Metrics for cat.jpg
+
+Peak Signal-to-Noise Ratio (PSNR):
+--------------------------------
+Median Filter: 37.20 dB
+Gaussian Filter: 35.65 dB
+Bilateral Filter: 51.19 dB
+Contrast Enhanced: 14.06 dB
+Sharpened: 32.95 dB
+
+Mean Squared Error (MSE):
+------------------------
+Median Filter: 12.40
+Gaussian Filter: 17.69
+Bilateral Filter: 0.49
+Contrast Enhanced: 2551.21
+Sharpened: 32.99

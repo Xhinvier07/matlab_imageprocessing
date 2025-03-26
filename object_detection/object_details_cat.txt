@@ -1,0 +1,12 @@
+Object Detection Results for cat
+======================================
+Color Thresholds:
+  Channel 1 Min: 0.000, Max: 1.000
+  Channel 2 Min: 0.000, Max: 1.000
+  Channel 3 Min: 0.843, Max: 1.000
+======================================
+
+Merged Cat Detection:
+  Centroid: (259.00, 256.50)
+  Bounding Box: [x y width height] = [37.50 0.50 443.00 512.00]
+  Area: 226816.00 pixels

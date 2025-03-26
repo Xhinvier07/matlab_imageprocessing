@@ -1,0 +1,19 @@
+Image Classification Results for rainy.jpg
+
+Classified Type: Rainy Cloud
+
+Color Analysis:
+----------------
+Blue Ratio: 0.000
+Orange Ratio: 0.000
+Red Ratio: 0.000
+Green Ratio: 0.000
+Gray Ratio: 0.600
+Color Variety: 0.004
+
+Texture Analysis:
+----------------
+Contrast: 0.0548
+Correlation: 0.0689
+Energy: 0.0479
+Homogeneity: 0.0769

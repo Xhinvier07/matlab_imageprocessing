@@ -1,0 +1,19 @@
+Image Classification Results for bird.jpg
+
+Classified Type: Blue Bird
+
+Color Analysis:
+----------------
+Blue Ratio: 0.136
+Orange Ratio: 0.000
+Red Ratio: 0.000
+Green Ratio: 0.050
+Gray Ratio: 0.026
+Color Variety: 0.011
+
+Texture Analysis:
+----------------
+Contrast: 0.0761
+Correlation: 0.1326
+Energy: 0.1242
+Homogeneity: 0.1614

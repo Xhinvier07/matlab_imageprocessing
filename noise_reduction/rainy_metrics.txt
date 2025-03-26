@@ -1,0 +1,17 @@
+Image Processing Metrics for rainy.jpg
+
+Peak Signal-to-Noise Ratio (PSNR):
+--------------------------------
+Median Filter: 47.86 dB
+Gaussian Filter: 46.35 dB
+Bilateral Filter: 51.06 dB
+Contrast Enhanced: 16.58 dB
+Sharpened: 44.22 dB
+
+Mean Squared Error (MSE):
+------------------------
+Median Filter: 1.06
+Gaussian Filter: 1.51
+Bilateral Filter: 0.51
+Contrast Enhanced: 1427.69
+Sharpened: 2.46

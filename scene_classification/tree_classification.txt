@@ -1,0 +1,19 @@
+Image Classification Results for tree.jpg
+
+Classified Type: Tree
+
+Color Analysis:
+----------------
+Blue Ratio: 0.051
+Orange Ratio: 0.000
+Red Ratio: 0.000
+Green Ratio: 0.139
+Gray Ratio: 0.039
+Color Variety: 0.011
+
+Texture Analysis:
+----------------
+Contrast: 0.4060
+Correlation: 0.5665
+Energy: 0.3686
+Homogeneity: 0.5486

@@ -1,0 +1,22 @@
+Object Detection Results for block
+======================================
+Color Thresholds:
+  Channel 1 Min: 0.047, Max: 0.039
+  Channel 2 Min: 0.116, Max: 1.000
+  Channel 3 Min: 0.000, Max: 1.000
+======================================
+
+Object 1:
+  Centroid: (174.24, 268.90)
+  Area: 42343.00 pixels
+  Bounding Box: [x y width height] = [6.50 108.50 286.00 292.00]
+
+Object 2:
+  Centroid: (308.05, 393.80)
+  Area: 6802.00 pixels
+  Bounding Box: [x y width height] = [255.50 352.50 106.00 81.00]
+
+Object 3:
+  Centroid: (418.46, 271.56)
+  Area: 22547.00 pixels
+  Bounding Box: [x y width height] = [332.50 155.50 175.00 227.00]

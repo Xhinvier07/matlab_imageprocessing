@@ -1,0 +1,12 @@
+Object Detection Results for bird
+======================================
+Color Thresholds:
+  Channel 1 Min: 0.334, Max: 0.668
+  Channel 2 Min: 0.310, Max: 1.000
+  Channel 3 Min: 0.000, Max: 1.000
+======================================
+
+Object 1:
+  Centroid: (237.46, 202.21)
+  Area: 53330.00 pixels
+  Bounding Box: [x y width height] = [71.50 42.50 376.00 343.00]

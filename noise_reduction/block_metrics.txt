@@ -1,0 +1,17 @@
+Image Processing Metrics for block.jpg
+
+Peak Signal-to-Noise Ratio (PSNR):
+--------------------------------
+Median Filter: 38.94 dB
+Gaussian Filter: 33.62 dB
+Bilateral Filter: 49.12 dB
+Contrast Enhanced: 20.67 dB
+Sharpened: 32.73 dB
+
+Mean Squared Error (MSE):
+------------------------
+Median Filter: 8.31
+Gaussian Filter: 28.23
+Bilateral Filter: 0.80
+Contrast Enhanced: 557.34
+Sharpened: 34.66

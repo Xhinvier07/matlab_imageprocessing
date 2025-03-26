@@ -1,0 +1,27 @@
+Object Detection Results for tree
+======================================
+Color Thresholds:
+  Channel 1 Min: 4.000, Max: 255.000
+  Channel 2 Min: 9.000, Max: 101.000
+  Channel 3 Min: 0.000, Max: 255.000
+======================================
+
+Object 1:
+  Centroid: (252.44, 475.83)
+  Area: 33066.00 pixels
+  Bounding Box: [x y width height] = [0.50 394.50 512.00 118.00]
+
+Object 2:
+  Centroid: (245.77, 191.78)
+  Area: 47454.00 pixels
+  Bounding Box: [x y width height] = [83.50 32.50 289.00 337.00]
+
+Object 3:
+  Centroid: (446.06, 299.92)
+  Area: 13108.00 pixels
+  Bounding Box: [x y width height] = [350.50 208.50 162.00 147.00]
+
+Object 4:
+  Centroid: (504.76, 399.06)
+  Area: 860.00 pixels
+  Bounding Box: [x y width height] = [490.50 368.50 22.00 71.00]

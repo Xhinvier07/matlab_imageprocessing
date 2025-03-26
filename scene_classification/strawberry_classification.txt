@@ -1,0 +1,19 @@
+Image Classification Results for strawberry.jpg
+
+Classified Type: Strawberries
+
+Color Analysis:
+----------------
+Blue Ratio: 0.000
+Orange Ratio: 0.037
+Red Ratio: 0.704
+Green Ratio: 0.005
+Gray Ratio: 0.001
+Color Variety: 0.011
+
+Texture Analysis:
+----------------
+Contrast: 0.4668
+Correlation: 0.7352
+Energy: 0.4848
+Homogeneity: 0.7130

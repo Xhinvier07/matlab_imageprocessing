@@ -1,0 +1,17 @@
+Image Processing Metrics for strawberry.jpg
+
+Peak Signal-to-Noise Ratio (PSNR):
+--------------------------------
+Median Filter: 28.18 dB
+Gaussian Filter: 26.97 dB
+Bilateral Filter: 51.42 dB
+Contrast Enhanced: 16.65 dB
+Sharpened: 26.04 dB
+
+Mean Squared Error (MSE):
+------------------------
+Median Filter: 98.90
+Gaussian Filter: 130.78
+Bilateral Filter: 0.47
+Contrast Enhanced: 1406.96
+Sharpened: 161.74

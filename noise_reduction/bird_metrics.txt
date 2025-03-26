@@ -1,0 +1,17 @@
+Image Processing Metrics for bird.jpg
+
+Peak Signal-to-Noise Ratio (PSNR):
+--------------------------------
+Median Filter: 38.63 dB
+Gaussian Filter: 36.33 dB
+Bilateral Filter: 51.10 dB
+Contrast Enhanced: 18.82 dB
+Sharpened: 32.83 dB
+
+Mean Squared Error (MSE):
+------------------------
+Median Filter: 8.90
+Gaussian Filter: 15.13
+Bilateral Filter: 0.50
+Contrast Enhanced: 853.96
+Sharpened: 33.86

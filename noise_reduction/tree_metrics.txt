@@ -1,0 +1,17 @@
+Image Processing Metrics for tree.jpg
+
+Peak Signal-to-Noise Ratio (PSNR):
+--------------------------------
+Median Filter: 27.96 dB
+Gaussian Filter: 27.80 dB
+Bilateral Filter: 51.31 dB
+Contrast Enhanced: 15.69 dB
+Sharpened: 25.51 dB
+
+Mean Squared Error (MSE):
+------------------------
+Median Filter: 104.08
+Gaussian Filter: 108.03
+Bilateral Filter: 0.48
+Contrast Enhanced: 1753.64
+Sharpened: 182.93

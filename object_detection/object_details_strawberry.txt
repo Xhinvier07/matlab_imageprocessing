@@ -1,0 +1,47 @@
+Object Detection Results for strawberry
+======================================
+Color Thresholds:
+  Channel 1 Min: 122.000, Max: 255.000
+  Channel 2 Min: 0.000, Max: 255.000
+  Channel 3 Min: 0.000, Max: 255.000
+======================================
+
+Object 1:
+  Centroid: (227.33, 158.15)
+  Area: 134762.00 pixels
+  Bounding Box: [x y width height] = [0.50 0.50 512.00 465.00]
+
+Object 2:
+  Centroid: (18.69, 270.14)
+  Area: 2686.00 pixels
+  Bounding Box: [x y width height] = [0.50 228.50 45.00 86.00]
+
+Object 3:
+  Centroid: (102.28, 486.79)
+  Area: 2929.00 pixels
+  Bounding Box: [x y width height] = [59.50 441.50 78.00 71.00]
+
+Object 4:
+  Centroid: (188.60, 435.68)
+  Area: 12511.00 pixels
+  Bounding Box: [x y width height] = [125.50 370.50 135.00 142.00]
+
+Object 5:
+  Centroid: (264.42, 481.47)
+  Area: 1421.00 pixels
+  Bounding Box: [x y width height] = [243.50 446.50 42.00 66.00]
+
+Object 6:
+  Centroid: (348.65, 469.26)
+  Area: 9423.00 pixels
+  Bounding Box: [x y width height] = [291.50 405.50 121.00 107.00]
+
+Object 7:
+  Centroid: (420.55, 309.16)
+  Area: 19408.00 pixels
+  Bounding Box: [x y width height] = [313.50 231.50 199.00 155.00]
+
+Object 8:
+  Centroid: (459.78, 450.92)
+  Area: 2520.00 pixels
+  Bounding Box: [x y width height] = [428.50 399.50 60.00 87.00]
