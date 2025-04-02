@@ -1,4 +1,0 @@
-Object Detection Results for bird.jpg
-===============================
-Total Objects Detected: 1
-

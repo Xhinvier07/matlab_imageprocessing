@@ -11,12 +11,12 @@ end
 
 % Define fixed class labels and corresponding subfolders
 classFolders = struct( ...
-    'Blue Bird', 'bluebird_images', ...
-    'Ginger Cat', 'gingercat_images', ...
+    'Blue_Bird', 'bluebird_images', ...
+    'Ginger_Cat', 'gingercat_images_knn', ...
     'Strawberry', 'strawberry_images', ...
     'Tree', 'tree_images', ...
-    'Rainy Cloud', 'rainy_images', ...
-    'Lego Blocks', 'lego_images' ...
+    'Rainy_Cloud', 'rainy_images', ...
+    'Lego_Blocks', 'lego_images' ...
 );
 
 % Initialize arrays for features and labels
@@ -26,7 +26,7 @@ labels = [];
 % Function to extract color histogram features
 function hist_features = extractColorHistogram(img)
     hsv_img = rgb2hsv(img);
-    num_bins = 32;
+    num_bins = 16; % Reduce bins to avoid overfitting
     h_hist = histcounts(hsv_img(:,:,1), num_bins, 'Normalization', 'probability');
     s_hist = histcounts(hsv_img(:,:,2), num_bins, 'Normalization', 'probability');
     v_hist = histcounts(hsv_img(:,:,3), num_bins, 'Normalization', 'probability');
@@ -35,75 +35,92 @@ end
 
 % Function to extract GLCM texture features
 function texture_features = extractTextureFeatures(img)
-    if size(img, 3) == 3
-        gray_img = rgb2gray(img);
-    else
-        gray_img = img;
-    end
+    gray_img = rgb2gray(img);
     offsets = [0 1; -1 1; -1 0; -1 -1];
     glcm = graycomatrix(gray_img, 'Offset', offsets, 'Symmetric', true, 'NumLevels', 8);
     stats = graycoprops(glcm, {'Contrast', 'Correlation', 'Energy', 'Homogeneity'});
     texture_features = [stats.Contrast stats.Correlation stats.Energy stats.Homogeneity];
 end
 
+% Function for Data Augmentation (Flipping & Rotation)
+function img_aug = augmentImage(img)
+    methods = {@(x) x, ... % Original
+               @(x) imrotate(x, randi([0, 360])), ... % Rotate randomly
+               @(x) flip(x, 1), ... % Flip vertically
+               @(x) flip(x, 2)}; % Flip horizontally
+    idx = randi(length(methods)); 
+    img_aug = methods{idx}(img);
+end
+
+% Supported image extensions
+validExtensions = {'.jpg', '.jpeg', '.png', '.bmp', '.tiff', '.gif'};
+
 % Loop through predefined categories
 classNames = fieldnames(classFolders);
 for c = 1:length(classNames)
-    className = classNames{c};  % Class label (e.g., 'Blue Bird')
-    folderName = classFolders.(className);  % Folder name (e.g., 'bluebird_images')
+    className = classNames{c};  
+    folderName = classFolders.(className);  
     categoryPath = fullfile(datasetFolder, folderName);
     
-    % Get all image files in this category folder
     if ~exist(categoryPath, 'dir')
         fprintf('Warning: Folder "%s" does not exist, skipping...\n', categoryPath);
         continue;
     end
-    imageFiles = dir(fullfile(categoryPath, '*.jpg'));  % Change extension if needed
     
+    % Get all image files with valid extensions
+    allFiles = dir(fullfile(categoryPath, '*'));
+    imageFiles = allFiles(arrayfun(@(x) any(endsWith(lower(x.name), validExtensions)), allFiles));
+
     for i = 1:length(imageFiles)
         img = imread(fullfile(categoryPath, imageFiles(i).name));
         
-        % Extract features
+        % Original Image Features
         color_features = extractColorHistogram(img);
         texture_features = extractTextureFeatures(img);
-        
-        % Store extracted features and corresponding label
         features = [features; [color_features texture_features]];
-        labels = [labels; {className}];  % Use predefined class label
+        labels = [labels; {className}];
+        
+        % Augment and Extract Features Again
+        img_aug = augmentImage(img);
+        color_features_aug = extractColorHistogram(img_aug);
+        texture_features_aug = extractTextureFeatures(img_aug);
+        features = [features; [color_features_aug texture_features_aug]];
+        labels = [labels; {className}];
     end
 end
 
 % Convert labels to categorical
 labels = categorical(labels);
 
-% Split dataset (70% training, 30% testing)
-train_ratio = 0.7;
-num_train = round(train_ratio * length(labels));
+% Normalize Features
+features = normalize(features);
 
-train_features = features(1:num_train, :);
-train_labels = labels(1:num_train);
+% Stratified Train-Test Split (50% Train, 50% Test)
+cv = cvpartition(labels, 'HoldOut', 0.5);
+train_features = features(training(cv), :);
+train_labels = labels(training(cv));
+test_features = features(test(cv), :);
+test_labels = labels(test(cv));
 
-test_features = features(num_train+1:end, :);
-test_labels = labels(num_train+1:end);
-
-% Train KNN classifier
-knn_model = fitcknn(train_features, train_labels, 'NumNeighbors', 5);
+% Train KNN classifier with Auto-tuned 'k'
+knn_model = fitcknn(train_features, train_labels, 'NumNeighbors', 3, ...
+                    'Standardize', true, 'Distance', 'euclidean');
 
 % Predict using KNN
 predicted_labels = predict(knn_model, test_features);
 
-% Calculate accuracy
+% Calculate Accuracy
 accuracy = sum(predicted_labels == test_labels) / length(test_labels);
 fprintf('KNN Classification Accuracy: %.2f%%\n', accuracy * 100);
 
-% Save trained model
+% Save Trained Model
 save(fullfile(outputFolder, 'knn_model.mat'), 'knn_model');
 
-% Display confusion matrix
+% Display Confusion Matrix
 figure;
 cm = confusionmat(test_labels, predicted_labels);
 confusionchart(cm, classNames);
-title(['Confusion Matrix (KNN Accuracy: ' num2str(accuracy*100) '%)']);
+title(['Confusion Matrix (KNN Accuracy: ' num2str(accuracy * 100) '%)']);
 saveas(gcf, fullfile(outputFolder, 'confusion_matrix.png'));
 
 fprintf('Processing complete! KNN model saved in %s\n', outputFolder);
