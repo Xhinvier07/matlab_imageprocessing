@@ -3,8 +3,8 @@
 This repository contains various image processing scripts and tools for tasks such as noise reduction, segmentation, classification, object detection, and more. The project is implemented in MATLAB and is organized into different modules for specific functionalities.
 
 ## Authors
-- Jansen Jhoel Moral [GitHub Profile](https://github.com/Xhinvier07)
-- Dane Ross Quintano [GitHub Profile](https://github.com/d-quint)
+- Jansen Jhoel Moral ([GitHub Profile](https://github.com/Xhinvier07))
+- Dane Ross Quintano ([GitHub Profile](https://github.com/d-quint))
 
 ## Table of Contents
 
