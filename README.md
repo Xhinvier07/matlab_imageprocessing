@@ -52,7 +52,7 @@ image_processing/
 ├── noise_reduction.m
 ├── object_detect.m
 ├── resize.m
-├── scene_classify_predict.m
+├── scene_classify.m
 ├── scene_classify_train.m
 ├── color_segment.m
 ├── LICENSE
@@ -98,7 +98,7 @@ image_processing/
 
 5. **Predict Scene Class**: Use `scene_classify_predict.m` to classify a new image using the trained KNN model.
    ```matlab
-   run('scene_classify_predict.m');
+   run('scene_classify.m');
    ```
 
 6. **Ginger Cat Classification**:
