@@ -9,7 +9,7 @@ num_images = input('Enter the number of images to process: ');
 inputFolder = 'images/processed_images';
 outputFolder = 'color_segmentation';
 
-% Create output folder if it doesn't exist
+% Create output folder if it doesn't existt
 if ~exist(outputFolder, 'dir')
     mkdir(outputFolder);
 end
